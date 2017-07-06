@@ -11,7 +11,6 @@ public class CD {
     mDescription = description;
     instances.add(this);
     mId = instances.size();
-
   }
 
   public String getDescription() {

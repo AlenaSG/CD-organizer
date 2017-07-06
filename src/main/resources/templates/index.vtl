@@ -1,20 +1,4 @@
-<h1>Your CDs:</h1>
+<h1>Welcome to the CD List Application</h1>
 
-#if ($cDs)
-  <ul>
-    #foreach ($cD in $cDs)
-      <li>$cD.getDescription()</li>
-    #end
-  </ul>
-#else
-  <p>No CD!</p>
-#end
-
-<p>Add a new CD:</p>
-
-<form action="/cDs" method="post">
-  <label for="description">CD Description</label>
-  <input id="description" name="description" type="text">
-
-  <button type="submit" class="btn btn-default">Add CD</button>
-</form>
+<a href="/artists">View Artist List</a>
+<a href="/artists/new">Add a new Artist</a>

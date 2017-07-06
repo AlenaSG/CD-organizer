@@ -1,0 +1,13 @@
+<h1>Your CDs:</h1>
+
+#if ($cDs)
+  <ul>
+    #foreach ($cD in $cDs)
+      <li><a href="/cDs/$cD.getId()">$cD.getDescription()</a></li>
+    #end
+  </ul>
+#else
+  <p>No CD!</p>
+#end
+
+<a href="/cDs/new">Add new CD</a>
