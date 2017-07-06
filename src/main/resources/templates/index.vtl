@@ -1,20 +1,20 @@
-<h1>Places you been to</h1>
+<h1>Your CDs:</h1>
 
-#if ($places)
+#if ($cDs)
   <ul>
-    #foreach ($place in $places)
-      <li>$place.getDescription()</li>
+    #foreach ($cD in $cDs)
+      <li>$cD.getDescription()</li>
     #end
   </ul>
 #else
-  <p>No Places!</p>
+  <p>No CD!</p>
 #end
 
-<p>Add a new place:</p>
+<p>Add a new CD:</p>
 
-<form action="/places" method="post">
-  <label for="description">Place Description</label>
+<form action="/cDs" method="post">
+  <label for="description">CD Description</label>
   <input id="description" name="description" type="text">
 
-  <button type="submit" class="btn btn-default">Add Place</button>
+  <button type="submit" class="btn btn-default">Add CD</button>
 </form>

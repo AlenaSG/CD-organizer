@@ -14,25 +14,25 @@ public class App {
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("places", request.session().attribute("places"));
+      model.put("cDs", request.session().attribute("cDs"));
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
 
-    post("/places", (request, response) -> {
+    post("/cDs", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
 
-      ArrayList<Place> places = request.session().attribute("places");
-      if (places == null) {
-        places = new ArrayList<Place>();
-        request.session().attribute("places", places);
+      ArrayList<CD> cDs = request.session().attribute("cDs");
+      if (cDs == null) {
+        cDs = new ArrayList<CD>();
+        request.session().attribute("cDs", cDs);
       }
 
       String description = request.queryParams("description");
-      Place newPlace = new Place(description);
-      places.add(newPlace);
-      request.session().attribute("place", newPlace);
+      CD newCD = new CD(description);
+      cDs.add(newCD);
+      request.session().attribute("cD", newCD);
 
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);
